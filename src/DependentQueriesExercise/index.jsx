@@ -19,26 +19,11 @@ const fetchPosts = async ({ queryKey }) => {
 
 export default function DependentQueriesExercise() {
   const [selectedUserId, setSelectedUserId] = useState("");
-  const {
-    data: users,
-    isLoading: loadingUsers,
-    error: errorUsers,
-  } = useQuery({
-    queryKey: ["users"],
-    queryFn: fetchUsers,
-  });
 
 
-  const {
-    data: posts,
-    isLoading: loadingPosts,
-    error: errorPosts,
-    refetch: refetchPosts,
-  } = useQuery({
-    queryKey: ["posts", selectedUserId],
-    queryFn: fetchPosts,
-    enabled: !!selectedUserId,
-  });
+  //FAZER O GET DOS USUÁRIOS
+  // DEPOIS, FAZER O GET DOS POSTS DO USUÁRIO SELECIONADO
+ 
 
   return (
     <div style={{ padding: 24 }}>

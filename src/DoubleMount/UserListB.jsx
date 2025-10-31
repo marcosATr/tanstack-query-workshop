@@ -2,14 +2,13 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 
 function fetchUsers() {
-  return fetch("https://jsonplaceholder.typicode.com/users?_limit=10").then((res) => res.json());
+  return fetch("https://jsonplaceholder.typicode.com/users?_limit=10").then(
+    (res) => res.json()
+  );
 }
 
 export default function UserListB() {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["users"],
-    queryFn: fetchUsers,
-  });
+  //FAZER UM GET COM REACT QUERY AQUI
 
   if (isLoading) return <div>Loading B...</div>;
   if (error) return <div>Error loading users B</div>;

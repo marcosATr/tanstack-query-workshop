@@ -11,6 +11,10 @@ export default function UserListB() {
     queryFn: fetchUsers,
   });
 
+  // O QUE APARECE NO NETWORK?
+  // COMO PODEMOS GARANTIR QUE VAMOS REUTILIZAR A MESMA QUERY SEM FAZER OUTRA CHAMADA NO NETWORK?
+  
+
   if (isLoading) return <div>Loading B...</div>;
   if (error) return <div>Error loading users B</div>;
 

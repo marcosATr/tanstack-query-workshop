@@ -10,24 +10,16 @@ function createPost(newPost) {
   }).then((res) => res.json());
 }
 
-
-
-
 export default function Mutations() {
-  const mutation = useMutation({
-    mutationKey: ["createPost"],
-    mutationFn: createPost,
-  });
+ //criar a mutation
+
+ //enviar na mutaton { title: "foo", body: "bar", userId: Math.random() }
+  const post = () => {}
 
   return (
     <div>
       <h2>Mutation Example</h2>
-      <button
-        onClick={() =>
-          mutation.mutate({ title: "foo", body: "bar", userId: Math.random() })
-        }
-        disabled={mutation.isPending}
-      >
+      <button onClick={post} disabled={mutation.isPending}>
         Create Post
       </button>
       <MutationResult />

@@ -6,10 +6,7 @@ function fetchUsers() {
 }
 
 export default function UserListA() {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["users"],
-    queryFn: fetchUsers,
-  });
+  //FAZER UM GET COM REACT QUERY AQUI
 
   if (isLoading) return <div>Loading A...</div>;
   if (error) return <div>Error loading users A</div>;

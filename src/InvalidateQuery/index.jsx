@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 
 let postsDatabase = [
   { id: 1, title: "Post inicial 1", body: "Conteúdo do post 1", userId: 1 },
@@ -28,26 +28,14 @@ function createPost(newPost) {
 }
 
 export default function InvalidateQuery() {
-  const queryClient = useQueryClient();
-  const { data: posts, isLoading } = useQuery({
-    queryKey: ["posts"],
-    queryFn: fetchPosts,
-  });
+ 
 
-  const mutation = useMutation({
-    mutationKey: ["createPost"],
-    mutationFn: createPost,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["posts"] });
-    },
-  });
+  //Criar mutation
+  //Como podemos refazer o fetch dos posts quando a mutation for um sucesso?
 
-  const addPost =  () =>
-    mutation.mutate({
-      title: `Novo Post ${new Date().toLocaleTimeString()}`,
-      body: "Este post foi adicionado via mutation!",
-      userId: Math.random(),
-    });
+  //usar a mutation para adicionar um post
+  const addPost =  () => {}
+   
 
   return (
     <div>
